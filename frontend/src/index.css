@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  .diagonal-stripes {
+    background-color: #FFDBFD;
+    background-image: repeating-linear-gradient(45deg, #C9BEFF 0, #C9BEFF 1px, transparent 0, transparent 50%);
+    background-size: 20px 20px;
+    background-blend-mode: overlay;
+    opacity: 0.85;
+  }
+
+  .diagonal-pattern {
+    background-image: repeating-linear-gradient(45deg, rgba(199, 190, 255, 0.05) 0px, rgba(199, 190, 255, 0.05) 2px, transparent 2px, transparent 8px);
+  }
+
+  .waveform-bar {
+    animation: wave-grow 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes wave-grow {
+    from { height: 4px; }
+    to { height: 24px; }
+  }
+
+  .waveform-bar:nth-child(2n) { animation-delay: 0.1s; }
+  .waveform-bar:nth-child(3n) { animation-delay: 0.2s; }
+  .waveform-bar:nth-child(4n) { animation-delay: 0.3s; }
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}

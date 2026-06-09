@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>New Field Entry - FieldTrack</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c6c4d8",
+                        "on-primary-fixed": "#05006c",
+                        "primary": "#4244df",
+                        "on-secondary-container": "#0f238e",
+                        "on-surface": "#1b1b24",
+                        "on-tertiary-fixed": "#1c1148",
+                        "primary-container": "#5d61f9",
+                        "on-secondary-fixed-variant": "#2a3ba2",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1b24",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f2effc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#2928ca",
+                        "surface-container-high": "#e9e6f3",
+                        "on-secondary-fixed": "#000e5f",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container": "#efecf9",
+                        "secondary": "#4454bb",
+                        "surface-container-highest": "#e4e1ee",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fcf8ff",
+                        "surface": "#fcf8ff",
+                        "on-tertiary-container": "#fffbff",
+                        "inverse-surface": "#302f39",
+                        "secondary-container": "#8393fe",
+                        "on-primary": "#ffffff",
+                        "outline": "#767587",
+                        "tertiary-container": "#766da8",
+                        "secondary-fixed": "#dfe0ff",
+                        "tertiary-fixed-dim": "#c9beff",
+                        "on-primary-container": "#fffbff",
+                        "surface-dim": "#dbd8e5",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "surface-container-low": "#f5f2ff",
+                        "on-surface-variant": "#454555",
+                        "on-tertiary-fixed-variant": "#483f77",
+                        "background": "#fcf8ff",
+                        "tertiary": "#5d548d",
+                        "surface-variant": "#e4e1ee",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#c0c1ff",
+                        "tertiary-fixed": "#e6deff",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#4547e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "container-margin-mobile": "16px",
+                        "container-margin-desktop": "40px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .diagonal-stripes {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(195, 190, 255, 0.05) 10px, rgba(195, 190, 255, 0.05) 20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen diagonal-stripes flex flex-col pb-24">
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-surface-container-low flex justify-between items-center w-full px-container-margin-mobile md:px-container-margin-desktop h-16 fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">arrow_back</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-inverse-primary">New Field Entry</h1>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</div>
+</header>
+<main class="mt-20 px-container-margin-mobile md:px-container-margin-desktop max-w-2xl mx-auto w-full">
+<!-- Progress Bar Section -->
+<div class="mb-xl">
+<div class="flex justify-between items-end mb-2">
+<p class="font-label-md text-label-md text-primary" id="step-counter">Step 1 of 4</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant" id="step-title">Employee &amp; Location Info</p>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="h-full bg-[#6367FF] transition-all duration-500 ease-in-out" id="progress-bar" style="width: 25%;"></div>
+</div>
+</div>
+<form class="space-y-xl" id="field-entry-form">
+<!-- STEP 1: Employee & Location Info -->
+<section class="space-y-lg" id="step-1">
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Employee Name</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg font-body-md text-body-md text-on-surface-variant px-4 py-2 cursor-not-allowed" readonly="" type="text" value="Ankit Sharma"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Employee ID</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg font-body-md text-body-md text-on-surface-variant px-4 py-2 cursor-not-allowed" readonly="" type="text" value="FT-99021"/>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Place of Work</label>
+<input class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg font-body-md text-body-md px-4 py-3 outline-none transition-all" placeholder="Enter market or area name" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Date of Visit</label>
+<input class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg font-body-md text-body-md px-4 py-3 outline-none transition-all" type="date"/>
+</div>
+</div>
+<!-- Geotag Section -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden">
+<div class="h-32 bg-surface-container flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-40 grayscale" data-alt="A stylized aerial satellite view map of an urban grid layout with subtle blue and grey color grading. The image is designed to look like a high-end data visualization background for a professional logistics application, focusing on clean lines and a modern digital aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHyvftObQu5Jno_GW8ffRMF6MaRW87XnS44x03NiDYn49Z2c2ZThVP-58nPYobonFYGxtIxLw-N1EU_BbB0FsTL6zCD-AVqgwdSyDXXZDy_LyiOnu3se4S3at7JZiKFr1_P9rVL_1xucsVukLjrXenSqE_Hma9NmkVUFgCBq_ZPUjy-Xj3CY-xMpL3hsBb2QzdwV8XeNcioC1PD8psleDagkRXCrYZzS4zZhefZaEDBSbUKnfg_3MSfRzMtHX9y3eXoCZ-sGRSXbk'); background-size: cover; background-position: center;"></div>
+<span class="material-symbols-outlined text-primary text-4xl relative z-10" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="p-md space-y-md">
+<button class="w-full flex items-center justify-center gap-2 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-label-md text-label-md hover:bg-opacity-90 transition-all active:scale-95" onclick="captureLocation()" type="button">
+<span class="material-symbols-outlined">my_location</span>
+                            Capture My Location
+                        </button>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-[10px] uppercase font-bold text-outline">Latitude</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg font-mono text-sm px-3 py-2 text-on-surface-variant" id="lat" placeholder="0.0000" readonly="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase font-bold text-outline">Longitude</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg font-mono text-sm px-3 py-2 text-on-surface-variant" id="lng" placeholder="0.0000" readonly="" type="text"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- STEP 2: Shop Details (Hidden initially) -->
+<section class="space-y-lg hidden" id="step-2">
+<div class="space-y-4">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Shop Name *</label>
+<input class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg font-body-md text-body-md px-4 py-3 outline-none transition-all" placeholder="Full registered name" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Owner Name</label>
+<input class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg font-body-md text-body-md px-4 py-3 outline-none transition-all" placeholder="Contact person name" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Shop Address</label>
+<textarea class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg font-body-md text-body-md px-4 py-3 outline-none transition-all resize-none" placeholder="Full street address, landmark" rows="3"></textarea>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Phone Number</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md">+91</span>
+<input class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg font-body-md text-body-md pl-14 pr-4 py-3 outline-none transition-all" placeholder="98765 43210" type="tel"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Category</label>
+<select class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-lg font-body-md text-body-md px-4 py-3 outline-none transition-all appearance-none">
+<option value="">Select Category</option>
+<option value="retail">Retail Pharmacy</option>
+<option value="wholesale">Wholesale Distributor</option>
+<option value="clinic">Medical Clinic</option>
+<option value="hospital">Hospital Supply</option>
+</select>
+</div>
+</div>
+</section>
+</form>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 w-full bg-surface border-t border-secondary-fixed p-container-margin-mobile flex gap-4 z-50">
+<button class="flex-1 hidden py-4 border-2 border-primary text-primary rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-white transition-all active:scale-95" id="prev-btn" onclick="prevStep()">
+            Back
+        </button>
+<button class="flex-[2] py-4 bg-primary text-white rounded-lg font-label-md text-label-md shadow-lg shadow-primary/20 hover:bg-[#8494FF] transition-all active:scale-95" id="next-btn" onclick="nextStep()">
+            Next
+        </button>
+</div>
+<!-- Bottom Nav Bar (Hidden for Task Focus as per instructions) -->
+<!-- Suppressed to prioritize the form canvas -->
+<script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function updateUI() {
+            const progressBar = document.getElementById('progress-bar');
+            const stepCounter = document.getElementById('step-counter');
+            const stepTitle = document.getElementById('step-title');
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
+
+            // Progress Bar Update
+            const percentage = (currentStep / totalSteps) * 100;
+            progressBar.style.width = `${percentage}%`;
+            stepCounter.textContent = `Step ${currentStep} of ${totalSteps}`;
+
+            if (currentStep === 1) {
+                stepTitle.textContent = 'Employee & Location Info';
+                step1.classList.remove('hidden');
+                step2.classList.add('hidden');
+                prevBtn.classList.add('hidden');
+                nextBtn.textContent = 'Next';
+            } else if (currentStep === 2) {
+                stepTitle.textContent = 'Shop Details';
+                step1.classList.add('hidden');
+                step2.classList.remove('hidden');
+                prevBtn.classList.remove('hidden');
+                nextBtn.textContent = 'Continue to Step 3';
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function captureLocation() {
+            const latField = document.getElementById('lat');
+            const lngField = document.getElementById('lng');
+            const btn = event.currentTarget;
+            
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Capturing...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                latField.value = "28.6139";
+                lngField.value = "77.2090";
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Location Captured';
+                btn.classList.replace('bg-secondary-container', 'bg-tertiary-fixed');
+                btn.classList.replace('text-on-secondary-container', 'text-on-tertiary-fixed-variant');
+            }, 1500);
+        }
+
+        // Initialize UI
+        document.addEventListener('DOMContentLoaded', updateUI);
+    </script>
+</body></html>

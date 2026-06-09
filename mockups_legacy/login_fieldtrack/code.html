@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - FieldTrack</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c6c4d8",
+                        "on-primary-fixed": "#05006c",
+                        "primary": "#4244df",
+                        "on-secondary-container": "#0f238e",
+                        "on-surface": "#1b1b24",
+                        "on-tertiary-fixed": "#1c1148",
+                        "primary-container": "#5d61f9",
+                        "on-secondary-fixed-variant": "#2a3ba2",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1b24",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f2effc",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#2928ca",
+                        "surface-container-high": "#e9e6f3",
+                        "on-secondary-fixed": "#000e5f",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-container": "#efecf9",
+                        "secondary": "#4454bb",
+                        "surface-container-highest": "#e4e1ee",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fcf8ff",
+                        "surface": "#fcf8ff",
+                        "on-tertiary-container": "#fffbff",
+                        "inverse-surface": "#302f39",
+                        "secondary-container": "#8393fe",
+                        "on-primary": "#ffffff",
+                        "outline": "#767587",
+                        "tertiary-container": "#766da8",
+                        "secondary-fixed": "#dfe0ff",
+                        "tertiary-fixed-dim": "#c9beff",
+                        "on-primary-container": "#fffbff",
+                        "surface-dim": "#dbd8e5",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "surface-container-low": "#f5f2ff",
+                        "on-surface-variant": "#454555",
+                        "on-tertiary-fixed-variant": "#483f77",
+                        "background": "#fcf8ff",
+                        "tertiary": "#5d548d",
+                        "surface-variant": "#e4e1ee",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#c0c1ff",
+                        "tertiary-fixed": "#e6deff",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#4547e1",
+                        "brand-tint": "#FFDBFD",
+                        "brand-accent": "#6367FF",
+                        "soft-accent": "#C9BEFF"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "container-margin-mobile": "16px",
+                        "container-margin-desktop": "40px",
+                        "xl": "32px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .diagonal-stripes {
+            background-color: #FFDBFD;
+            background-image: repeating-linear-gradient(45deg, #C9BEFF 0, #C9BEFF 1px, transparent 0, transparent 50%);
+            background-size: 20px 20px;
+            background-blend-mode: overlay;
+        }
+        .pattern-overlay {
+            opacity: 0.05;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex items-center justify-center font-body-md text-on-background diagonal-stripes overflow-x-hidden">
+<!-- Background Decoration -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute top-[-10%] right-[-10%] w-96 h-96 bg-primary-container/20 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-secondary-container/20 blur-[100px] rounded-full"></div>
+</div>
+<!-- Login Container -->
+<main class="relative z-10 w-full max-w-[440px] px-container-margin-mobile md:px-0">
+<div class="bg-white border border-soft-accent rounded-xl p-xl shadow-sm transition-all duration-300 hover:border-primary-container/40">
+<!-- Logo Section -->
+<div class="flex flex-col items-center mb-xl">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-md transform rotate-3 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-[40px]" data-icon="track_changes">track_changes</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-brand-accent tracking-tight">
+                    FieldTrack
+                </h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-base">
+                    Secure Field Access Portal
+                </p>
+</div>
+<!-- Form -->
+<form class="space-y-lg" id="loginForm" onsubmit="event.preventDefault();">
+<!-- Email Field -->
+<div class="space-y-base">
+<label class="block font-label-md text-label-md text-on-surface" for="email">Email Address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px] group-focus-within:text-brand-accent transition-colors" data-icon="mail">mail</span>
+</div>
+<input class="block w-full pl-[48px] pr-md py-3 bg-white border border-soft-accent rounded-lg font-body-md text-on-surface placeholder-outline-variant focus:outline-none focus:ring-2 focus:ring-soft-accent focus:border-brand-accent transition-all" id="email" name="email" placeholder="agent@fieldtrack.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-base">
+<div class="flex justify-between items-center">
+<label class="block font-label-md text-label-md text-on-surface" for="password">Password</label>
+<a class="font-label-sm text-label-sm text-brand-accent hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-[20px] group-focus-within:text-brand-accent transition-colors" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-[48px] pr-[48px] py-3 bg-white border border-soft-accent rounded-lg font-body-md text-on-surface placeholder-outline-variant focus:outline-none focus:ring-2 focus:ring-soft-accent focus:border-brand-accent transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-md flex items-center text-outline hover:text-brand-accent transition-colors" id="togglePassword" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility" id="eyeIcon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center">
+<input class="h-4 w-4 text-brand-accent focus:ring-soft-accent border-soft-accent rounded" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-base block font-label-sm text-label-sm text-on-surface-variant" for="remember-me">
+                        Keep me signed in for 30 days
+                    </label>
+</div>
+<!-- Sign In Button -->
+<button class="w-full bg-brand-accent text-white py-3 px-md rounded-lg font-label-md text-label-md hover:bg-[#8494FF] active:scale-[0.98] transition-all shadow-md shadow-brand-accent/20 flex items-center justify-center gap-base" type="submit">
+                    Sign In
+                    <span class="material-symbols-outlined text-[18px]" data-icon="login">login</span>
+</button>
+</form>
+<!-- Secondary Actions -->
+<div class="mt-xl pt-lg border-t border-outline-variant flex flex-col items-center gap-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    Don't have an account? 
+                    <a class="text-brand-accent font-bold hover:underline" href="#">Request Access</a>
+</p>
+<div class="flex items-center gap-base">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">System Status: Operational</span>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-xl text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant/60">
+                © 2024 FieldTrack Professional Systems. All rights reserved.
+            </p>
+</footer>
+</main>
+<script>
+        // Password Visibility Toggle Logic
+        const passwordInput = document.getElementById('password');
+        const toggleButton = document.getElementById('togglePassword');
+        const eyeIcon = document.getElementById('eyeIcon');
+
+        toggleButton.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        });
+
+        // Simple login animation/interaction
+        document.getElementById('loginForm').addEventListener('submit', function() {
+            const btn = this.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Authenticating...';
+            
+            // Mock delay for UI demonstration
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Success';
+                btn.classList.replace('bg-brand-accent', 'bg-green-600');
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-green-600', 'bg-brand-accent');
+                    btn.disabled = false;
+                }, 1000);
+            }, 1500);
+        });
+    </script>
+</body></html>

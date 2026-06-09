@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FieldTrack - New Entry Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "secondary": "#4454bb",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-high": "#e9e6f3",
+                        "outline-variant": "#c6c4d8",
+                        "surface-container": "#efecf9",
+                        "on-primary-fixed": "#05006c",
+                        "primary": "#4244df",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-secondary-container": "#0f238e",
+                        "surface-dim": "#dbd8e5",
+                        "surface-tint": "#4547e1",
+                        "on-tertiary-fixed-variant": "#483f77",
+                        "on-secondary-fixed-variant": "#2a3ba2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1b1b24",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#000e5f",
+                        "primary-fixed": "#e1e0ff",
+                        "on-surface-variant": "#454555",
+                        "on-primary-fixed-variant": "#2928ca",
+                        "primary-container": "#5d61f9",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#c0c1ff",
+                        "secondary-container": "#8393fe",
+                        "on-background": "#1b1b24",
+                        "surface-container-low": "#f5f2ff",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "tertiary-fixed": "#e6deff",
+                        "outline": "#767587",
+                        "surface-variant": "#e4e1ee",
+                        "background": "#fcf8ff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2effc",
+                        "tertiary": "#5d548d",
+                        "on-tertiary-fixed": "#1c1148",
+                        "tertiary-container": "#766da8",
+                        "secondary-fixed": "#dfe0ff",
+                        "tertiary-fixed-dim": "#c9beff",
+                        "surface": "#fcf8ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e4e1ee",
+                        "on-tertiary-container": "#fffbff",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#302f39"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "base": "8px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "container-margin-desktop": "40px",
+                        "container-margin-mobile": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .diagonal-pattern {
+            background-image: repeating-linear-gradient(45deg, rgba(199, 190, 255, 0.05) 0px, rgba(199, 190, 255, 0.05) 2px, transparent 2px, transparent 8px);
+        }
+        .custom-audio-progress {
+            width: 100%;
+            height: 4px;
+            background: #e4e1ee;
+            border-radius: 2px;
+            position: relative;
+        }
+        .custom-audio-progress::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 35%;
+            background: #4244df;
+            border-radius: 2px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- Top App Bar -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center w-full px-container-margin-mobile md:px-container-margin-desktop h-16">
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">New Entry</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</header>
+<main class="flex-grow pb-32">
+<div class="max-w-3xl mx-auto px-container-margin-mobile md:px-xl mt-md">
+<!-- Progress Section -->
+<div class="mb-xl">
+<div class="flex justify-between items-end mb-xs">
+<p class="font-label-md text-label-md text-primary">Step 4 of 4</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Review &amp; Submit</p>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full transition-all duration-700 ease-out"></div>
+</div>
+</div>
+<!-- Bento-style Review Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Employee Info Card -->
+<section class="bg-white border border-outline-variant p-md rounded-xl diagonal-pattern flex flex-col gap-sm group">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">Employee Info</h2>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-primary hover:bg-primary-fixed p-1 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="mt-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Full Name</p>
+<p class="font-body-md text-body-md font-bold">Alex Henderson</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Employee ID</p>
+<p class="font-body-md text-body-md font-bold">FT-99284-X</p>
+</div>
+</section>
+<!-- Location Card -->
+<section class="bg-white border border-outline-variant p-md rounded-xl flex flex-col gap-sm group">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">Location</h2>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-primary hover:bg-primary-fixed p-1 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Place of Work</p>
+<p class="font-body-md text-body-md font-bold">Northwest Logistics Hub</p>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Coordinates</p>
+<p class="font-body-md text-body-md font-bold">34.0522° N, 118.2437° W</p>
+</div>
+<a class="flex items-center gap-xs bg-secondary-container text-on-secondary-container px-3 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary transition-colors group/btn" href="#">
+<span class="material-symbols-outlined text-[18px]">map</span>
+                            Maps
+                        </a>
+</div>
+</section>
+<!-- Shop Details Card - Span 2 on Desktop -->
+<section class="md:col-span-2 bg-white border border-outline-variant p-md rounded-xl flex flex-col gap-md group">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">Shop Details</h2>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-primary hover:bg-primary-fixed p-1 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Shop Name</p>
+<p class="font-body-md text-body-md font-bold">Apex Hardware</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Owner</p>
+<p class="font-body-md text-body-md font-bold">Sarah Jenkins</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Category</p>
+<span class="inline-block mt-1 px-2 py-0.5 bg-tertiary-fixed-dim text-on-tertiary-fixed text-label-sm rounded-md">Retail/Tools</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Phone</p>
+<p class="font-body-md text-body-md font-bold">+1 (555) 012-3456</p>
+</div>
+</div>
+</section>
+<!-- Media Review Section -->
+<section class="md:col-span-2 bg-white border border-outline-variant p-md rounded-xl flex flex-col gap-md group">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">perm_media</span>
+<h2 class="font-label-md text-label-md uppercase tracking-wider">Media &amp; Attachments</h2>
+</div>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-primary hover:bg-primary-fixed p-1 rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Image Thumbnails -->
+<div class="flex gap-md overflow-x-auto pb-2">
+<div class="relative min-w-[120px] h-32 rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Shop Interior" class="w-full h-full object-cover" data-alt="A detailed wide shot of a professional hardware store interior with organized shelves and bright artificial lighting. The scene captures the industrial corporate aesthetic of FieldTrack with clean lines and high contrast. The mood is functional and systematic, representing a field agent's site visit data capture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChVwErkDlu4nV5yamRvUPGx5DXioGvBJN0L5ac5GnVTU2g8QS0L2-_gRYVvJuMrDgdw-VFg9UC0k-iJ1HKmM4CF9q1UCuWc0LZmGvbLU5FMol3NWo8EhNljnwAJEqP6gwgazkTprhVnq0mUPMHlXbgSSSge1KUdpJwIeWxtzR3t-iVSHkWpZHbtWcdXGmk0C-wwfgFr0ni5DKbh84Sa56C6z5f0EmrX_doadBSrHGdfROoB2FnKw9FonkATdWx0bdB3hcho6Ayth8"/>
+<div class="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm text-white text-[10px] px-2 py-1">Frontage.jpg</div>
+</div>
+<div class="relative min-w-[120px] h-32 rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Inventory Tag" class="w-full h-full object-cover" data-alt="A high-resolution macro shot of an industrial QR code sticker on a metallic surface in a warehouse setting. The lighting is crisp and cool-toned, emphasizing professional reliability. This visual reinforces the technical and systematic nature of the FieldTrack platform for field data logging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYu6ExSR4z_9ctZxFXNtYA7ng07kXYoq4WPTYQcIcUwURR6w4qFlArfqEw2rIXKRXRLXbkzohAgpQOygTm65TIm4aDSwsZ4OMOq7OH1zGMUiLsyM1BqgNr_cJEK-Yp3h6ty4bsg0NwMblZ2eJCIugGnJFNMids5vJwHvw9XUhhJYobnEyA8QglmW4IxW4d2NlLhJuzvSMSMN1V2E1sGIBszmMGP2CJOYQfnip8jTt9y9IswJrJgaJuIQAnd_ovPfb2ImyTJClhbeM"/>
+<div class="absolute bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm text-white text-[10px] px-2 py-1">Tag_Scan.jpg</div>
+</div>
+<button class="min-w-[120px] h-32 rounded-lg border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">add</span>
+<span class="text-label-sm">Add More</span>
+</button>
+</div>
+<!-- Audio Notes -->
+<div class="flex flex-col gap-sm">
+<div class="bg-surface-container-low p-md rounded-lg flex items-center gap-md">
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+<div class="flex-grow">
+<p class="text-label-sm font-bold mb-1">Voice Note - Site Survey</p>
+<div class="custom-audio-progress"></div>
+<div class="flex justify-between text-[10px] text-on-surface-variant mt-1">
+<span>0:14</span>
+<span>0:42</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-md rounded-lg flex items-center gap-md">
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center active:scale-90 transition-transform">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+<div class="flex-grow">
+<p class="text-label-sm font-bold mb-1">Voice Note - Owner Comments</p>
+<div class="w-full h-1 bg-outline-variant rounded-full"></div>
+<div class="flex justify-between text-[10px] text-on-surface-variant mt-1">
+<span>0:00</span>
+<span>0:28</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Validation Checkbox -->
+<div class="mt-xl p-md bg-secondary-fixed rounded-xl flex gap-md items-start">
+<input class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary border-outline" id="confirm" type="checkbox"/>
+<label class="text-label-md text-on-secondary-fixed-variant leading-tight cursor-pointer" for="confirm">
+                    I confirm that all data entered above is accurate to the best of my knowledge and represents a physical site visit conducted on October 24, 2023.
+                </label>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action -->
+<footer class="fixed bottom-0 left-0 w-full bg-white border-t border-outline-variant p-md md:p-lg flex justify-center z-50">
+<div class="max-w-3xl w-full">
+<button class="w-full bg-[#6367FF] text-white font-bold py-4 rounded-xl text-body-lg hover:bg-[#4244df] transition-all transform active:scale-[0.98] shadow-lg shadow-primary/20 flex items-center justify-center gap-sm">
+                Submit Field Entry
+                <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Hidden on Desktop, Visible on Mobile Top-Level only - normally suppressed but here as a shell example if needed) -->
+<!-- Suppressed according to "The Destination Rule" as this is a transactional Step 4 screen -->
+<script>
+        // Micro-interaction for the submit button
+        document.querySelector('button.bg-\\[\\#6367FF\\]').addEventListener('click', function() {
+            const btn = this;
+            const originalContent = btn.innerHTML;
+            
+            // Check if checkbox is checked
+            const checkbox = document.getElementById('confirm');
+            if(!checkbox.checked) {
+                checkbox.parentElement.classList.add('animate-pulse', 'border-error');
+                setTimeout(() => {
+                    checkbox.parentElement.classList.remove('animate-pulse', 'border-error');
+                }, 1000);
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Submitting...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Entry Submitted Successfully';
+                btn.classList.replace('bg-[#6367FF]', 'bg-secondary');
+                
+                // Optional: Redirect or show success modal
+                console.log("Form Submitted Successfully");
+            }, 1800);
+        });
+
+        // Toggle Audio Play/Pause simulation
+        const audioButtons = document.querySelectorAll('button .material-symbols-outlined:contains("play_arrow")');
+        // Simple text-content selector polyfill/workaround
+        document.querySelectorAll('.bg-surface-container-low button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                if (icon.textContent === 'play_arrow') {
+                    icon.textContent = 'pause';
+                    this.classList.add('animate-pulse');
+                } else {
+                    icon.textContent = 'play_arrow';
+                    this.classList.remove('animate-pulse');
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FieldTrack - New Entry Step 2</title>
+<!-- Tailwind CSS with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "secondary": "#4454bb",
+                    "surface-bright": "#fcf8ff",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-high": "#e9e6f3",
+                    "outline-variant": "#c6c4d8",
+                    "surface-container": "#efecf9",
+                    "on-primary-fixed": "#05006c",
+                    "primary": "#4244df",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-secondary-container": "#0f238e",
+                    "surface-dim": "#dbd8e5",
+                    "surface-tint": "#4547e1",
+                    "on-tertiary-fixed-variant": "#483f77",
+                    "on-secondary-fixed-variant": "#2a3ba2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1b1b24",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#000e5f",
+                    "primary-fixed": "#e1e0ff",
+                    "on-surface-variant": "#454555",
+                    "on-primary-fixed-variant": "#2928ca",
+                    "primary-container": "#5d61f9",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#c0c1ff",
+                    "secondary-container": "#8393fe",
+                    "on-background": "#1b1b24",
+                    "surface-container-low": "#f5f2ff",
+                    "secondary-fixed-dim": "#bbc3ff",
+                    "tertiary-fixed": "#e6deff",
+                    "outline": "#767587",
+                    "surface-variant": "#e4e1ee",
+                    "background": "#fcf8ff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2effc",
+                    "tertiary": "#5d548d",
+                    "on-tertiary-fixed": "#1c1148",
+                    "tertiary-container": "#766da8",
+                    "secondary-fixed": "#dfe0ff",
+                    "tertiary-fixed-dim": "#c9beff",
+                    "surface": "#fcf8ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e4e1ee",
+                    "on-tertiary-container": "#fffbff",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#302f39"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "base": "8px",
+                    "md": "16px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "container-margin-desktop": "40px",
+                    "container-margin-mobile": "16px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom Background Pattern - Subtle Diagonal Stripes */
+        .pattern-bg {
+            background-color: #fcf8ff;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(193, 194, 255, 0.05) 10px, rgba(193, 194, 255, 0.05) 11px);
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .input-focus-ring:focus {
+            outline: none;
+            border-color: #4244df;
+            box-shadow: 0 0 0 4px rgba(201, 190, 255, 0.4);
+        }
+
+        .card-border {
+            border: 1px solid #c9beff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface min-h-screen pattern-bg">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center w-full px-container-margin-mobile md:px-container-margin-desktop h-16">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">FieldTrack</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container rounded-full transition-colors active:scale-95 duration-150 relative">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<main class="max-w-3xl mx-auto px-container-margin-mobile md:px-container-margin-desktop py-base">
+<!-- Progress Indicator -->
+<div class="mt-base mb-xl">
+<div class="flex justify-between items-end mb-2">
+<div>
+<span class="text-on-surface-variant font-label-md text-label-md">ENTRY PROGRESS</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Shop Details</h2>
+</div>
+<span class="font-label-md text-label-md text-primary">Step 2 of 4</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full transition-all duration-700 ease-out" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Form Card -->
+<div class="bg-surface-container-lowest card-border rounded-xl p-md md:p-lg space-y-lg mb-32">
+<div class="space-y-md">
+<!-- Shop Name -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="shop-name">Shop Name *</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 input-focus-ring transition-all placeholder:text-on-surface-variant/50" id="shop-name" placeholder="e.g. Agarwal General Store" required="" type="text"/>
+</div>
+<!-- Owner Name -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="owner-name">Shop Owner Name</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 input-focus-ring transition-all placeholder:text-on-surface-variant/50" id="owner-name" placeholder="Full name of the owner" type="text"/>
+</div>
+<!-- Shop Address with Geotag Suggestion -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="block font-label-md text-label-md text-on-surface" for="address">Shop Address</label>
+<span class="text-[10px] uppercase font-bold text-secondary bg-secondary-fixed/30 px-2 py-0.5 rounded tracking-wider">Auto-filled from GPS</span>
+</div>
+<textarea class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 input-focus-ring transition-all" id="address" rows="3">24/B, Nehru Colony, Near Central Park, Jaipur, Rajasthan - 302015</textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Phone Number -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="phone">Shop Phone Number</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-medium">+91</span>
+<input class="w-full bg-white border border-outline-variant rounded-lg pl-12 pr-4 py-3 input-focus-ring transition-all" id="phone" maxlength="10" placeholder="9876543210" type="tel"/>
+</div>
+</div>
+<!-- Category Dropdown -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="category">Shop Category</label>
+<div class="relative">
+<select class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 input-focus-ring transition-all appearance-none cursor-pointer" id="category">
+<option value="retail">Retail</option>
+<option value="wholesale">Wholesale</option>
+<option value="factory">Factory</option>
+<option value="office">Office</option>
+<option value="other">Other</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<!-- Additional Notes -->
+<div class="space-y-xs">
+<label class="block font-label-md text-label-md text-on-surface" for="notes">Additional Notes <span class="text-on-surface-variant font-normal">(Optional)</span></label>
+<textarea class="w-full bg-white border border-outline-variant rounded-lg px-4 py-3 input-focus-ring transition-all placeholder:text-on-surface-variant/50" id="notes" placeholder="Any specific landmarks or delivery instructions..." rows="2"></textarea>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual Map Hint Card (Aesthetic Detail) -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-3xl z-40">
+<div class="bg-primary/5 backdrop-blur-md border border-primary/20 rounded-xl p-3 flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 card-border">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist vector map snippet showing city streets and a blue location pin. The map design uses a soft color palette with light grays and pastel blues, maintaining a high-contrast professional look. Soft daylight illumination creates a clear and legible interface detail for a mobile application environment." data-location="Jaipur, India" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6YplUHMfruTQLt0WptHCiOqpsspjSlBb8H11S53JsFtZQ7fc-RgOeCKtSTvWQ2ixdOYpuD1eYrQ5gyoajo-TcgHJtMnUoyliauOx7HMFXhDoTn3EFUoyWEtP7PDfIC4xTJdpAMOWiFqK3PVvWWun1c752eJw_glWEmsQ_YAPH8Yb_qEH-SCJgu3dleDkg7z9IXRMJRrIcA0y-X3KCbfiWwhA41gvNQfmGNznUzhBi5QTKE7X2t7hPDvkr2lc2apzoB0CMw35BRm4"/>
+</div>
+<div class="flex-grow">
+<p class="text-label-sm font-label-sm text-primary uppercase font-bold">Current Verification</p>
+<p class="text-on-surface font-label-md text-label-md">Accuracy: High (Within 5 meters)</p>
+</div>
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified</span>
+</div>
+</div>
+<!-- Sticky Footer Navigation -->
+<footer class="fixed bottom-0 w-full z-50 bg-surface border-t border-secondary-fixed flex justify-around items-center px-4 py-4 md:py-6">
+<div class="max-w-3xl w-full flex justify-between items-center gap-4">
+<button class="flex-1 max-w-[120px] text-primary font-bold py-3 px-6 rounded-lg border-2 border-primary hover:bg-primary/5 transition-all active:scale-95" onclick="window.history.back()">
+                Back
+            </button>
+<button class="flex-[2] bg-primary text-white font-bold py-3 px-12 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-95 flex items-center justify-center gap-2">
+                Next
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</footer>
+<!-- Interactive Layer: Simple validation feedback script -->
+<script>
+        document.querySelector('button.bg-primary').addEventListener('click', function() {
+            const shopName = document.getElementById('shop-name').value;
+            if(!shopName) {
+                const input = document.getElementById('shop-name');
+                input.classList.add('border-error');
+                input.focus();
+                
+                // Temporary error shake effect
+                input.animate([
+                    { transform: 'translateX(0px)' },
+                    { transform: 'translateX(-5px)' },
+                    { transform: 'translateX(5px)' },
+                    { transform: 'translateX(0px)' }
+                ], { duration: 200, iterations: 2 });
+            } else {
+                // Success feedback
+                this.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Saving...';
+                setTimeout(() => {
+                    alert('Step 2 Submitted! Navigating to Step 3...');
+                    // In a real app: window.location.href = 'step3.html';
+                    this.innerHTML = 'Next <span class="material-symbols-outlined text-[20px]">arrow_forward</span>';
+                }, 800);
+            }
+        });
+
+        // Clear error on type
+        document.getElementById('shop-name').addEventListener('input', function() {
+            this.classList.remove('border-error');
+        });
+    </script>
+</body></html>
