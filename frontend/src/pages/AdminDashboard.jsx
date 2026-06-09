@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth, API_URL } from '../context/AuthContext';
+import { SERVER_URL } from '../config';
 import { useFormState } from '../context/FormContext';
 
 export default function AdminDashboard() {
@@ -852,13 +853,13 @@ export default function AdminDashboard() {
                       {selectedEntry.media.images.map((url, idx) => (
                         <a
                           key={idx}
-                          href={url.startsWith('http') ? url : `http://localhost:5000${url}`}
+                          href={url.startsWith('http') ? url : `${SERVER_URL}${url}`}
                           target="_blank"
                           rel="noreferrer"
                           className="aspect-square rounded overflow-hidden border border-outline-variant hover:opacity-85 transition-opacity"
                         >
                           <img
-                            src={url.startsWith('http') ? url : `http://localhost:5000${url}`}
+                            src={url.startsWith('http') ? url : `${SERVER_URL}${url}`}
                             alt={`Upload ${idx + 1}`}
                             className="w-full h-full object-cover"
                           />
@@ -883,7 +884,7 @@ export default function AdminDashboard() {
                         src={
                           selectedEntry.media.employeeVoiceNote.startsWith('http')
                             ? selectedEntry.media.employeeVoiceNote
-                            : `http://localhost:5000${selectedEntry.media.employeeVoiceNote}`
+                            : `${SERVER_URL}${selectedEntry.media.employeeVoiceNote}`
                         }
                         className="w-full h-8"
                       />
@@ -900,7 +901,7 @@ export default function AdminDashboard() {
                         src={
                           selectedEntry.media.shopRepVoiceNote.startsWith('http')
                             ? selectedEntry.media.shopRepVoiceNote
-                            : `http://localhost:5000${selectedEntry.media.shopRepVoiceNote}`
+                            : `${SERVER_URL}${selectedEntry.media.shopRepVoiceNote}`
                         }
                         className="w-full h-8"
                       />

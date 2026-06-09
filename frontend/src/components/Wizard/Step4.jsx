@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormState } from '../../context/FormContext';
+import { SERVER_URL } from '../../config';
 
 export default function Step4() {
   const { formData, submitEntry, setCurrentStep } = useFormState();
@@ -138,7 +139,7 @@ export default function Step4() {
                 <div className="flex gap-md overflow-x-auto pb-2">
                   {formData.media.images.map((url, index) => (
                     <div key={index} className="relative min-w-[120px] h-24 rounded-lg overflow-hidden border border-outline-variant">
-                      <img alt={`Upload ${index}`} className="w-full h-full object-cover" src={url?.startsWith('http') ? url : `http://localhost:5000${url}`} />
+                      <img alt={`Upload ${index}`} className="w-full h-full object-cover" src={url?.startsWith('http') ? url : `${SERVER_URL}${url}`} />
                     </div>
                   ))}
                 </div>
@@ -153,7 +154,7 @@ export default function Step4() {
               {formData.media?.employeeVoiceNote ? (
                 <div className="bg-surface-container-low p-2 rounded-lg">
                   <p className="text-xs font-bold mb-1">Employee Voice Survey</p>
-                  <audio controls src={formData.media.employeeVoiceNote?.startsWith('http') ? formData.media.employeeVoiceNote : `http://localhost:5000${formData.media.employeeVoiceNote}`} className="w-full h-8" />
+                  <audio controls src={formData.media.employeeVoiceNote?.startsWith('http') ? formData.media.employeeVoiceNote : `${SERVER_URL}${formData.media.employeeVoiceNote}`} className="w-full h-8" />
                 </div>
               ) : (
                 <p className="text-xs text-on-surface-variant italic">No employee voice note</p>
@@ -162,7 +163,7 @@ export default function Step4() {
               {formData.media?.shopRepVoiceNote ? (
                 <div className="bg-surface-container-low p-2 rounded-lg mt-2">
                   <p className="text-xs font-bold mb-1">Shop Representative Note</p>
-                  <audio controls src={formData.media.shopRepVoiceNote?.startsWith('http') ? formData.media.shopRepVoiceNote : `http://localhost:5000${formData.media.shopRepVoiceNote}`} className="w-full h-8" />
+                  <audio controls src={formData.media.shopRepVoiceNote?.startsWith('http') ? formData.media.shopRepVoiceNote : `${SERVER_URL}${formData.media.shopRepVoiceNote}`} className="w-full h-8" />
                 </div>
               ) : null}
             </div>

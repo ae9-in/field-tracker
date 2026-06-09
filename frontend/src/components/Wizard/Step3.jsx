@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { useFormState } from '../../context/FormContext';
 import { API_URL } from '../../context/AuthContext';
+import { SERVER_URL } from '../../config';
 
 export default function Step3() {
   const { formData, updateFormData } = useFormState();
@@ -202,7 +203,7 @@ export default function Step3() {
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-md">
           {formData.media?.images?.map((url, index) => (
             <div key={index} className="relative group aspect-square rounded-lg overflow-hidden border border-outline-variant">
-              <img className="w-full h-full object-cover" src={url?.startsWith('http') ? url : `http://localhost:5000${url}`} alt={`Shop upload ${index + 1}`} />
+              <img className="w-full h-full object-cover" src={url?.startsWith('http') ? url : `${SERVER_URL}${url}`} alt={`Shop upload ${index + 1}`} />
               <button
                 type="button"
                 onClick={() => removeImage(index)}
@@ -269,7 +270,7 @@ export default function Step3() {
 
               {audioUrl && (
                 <div className="mt-4 w-full">
-                  <audio controls src={audioUrl?.startsWith('http') ? audioUrl : `http://localhost:5000${audioUrl}`} className="w-full" />
+                  <audio controls src={audioUrl?.startsWith('http') ? audioUrl : `${SERVER_URL}${audioUrl}`} className="w-full" />
                 </div>
               )}
 
@@ -314,7 +315,7 @@ export default function Step3() {
           </label>
           {formData.media?.shopRepVoiceNote && (
             <div className="mt-4 w-full">
-              <audio controls src={formData.media.shopRepVoiceNote?.startsWith('http') ? formData.media.shopRepVoiceNote : `http://localhost:5000${formData.media.shopRepVoiceNote}`} className="w-full" />
+              <audio controls src={formData.media.shopRepVoiceNote?.startsWith('http') ? formData.media.shopRepVoiceNote : `${SERVER_URL}${formData.media.shopRepVoiceNote}`} className="w-full" />
             </div>
           )}
         </div>
